@@ -1,0 +1,161 @@
+/* Import Font Poppins dari Google Fonts dengan beberapa ketebalan */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; 
+    background-color: #fdf4d6;
+    color: #002D62;
+    overflow: hidden;
+}
+
+.scene {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    font-weight: 800; 
+}
+
+p {
+    font-size: 1.2em;
+    font-weight: 400; 
+}
+
+#countdown {
+    font-size: 3em;
+    margin: 10px 0;
+    font-weight: 800; 
+}
+
+#start-button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #fdf4d6; /* Warna krem */
+    background-color: #002D62; /* Warna biru tua */
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s ease;
+}
+
+#start-button:hover {
+    transform: scale(1.05);
+}
+
+
+
+.cake-container {
+    position: relative;
+    width: 250px; /* Ukuran diperbesar dari 200px */
+    height: 250px; /* Ukuran diperbesar dari 200px */
+    margin-top: 15px;
+    transform: translateX(-150px); /* Geser ke kiri sebanyak 50px */
+}
+
+.cake {
+    width: 125%;
+    position: absolute;
+    bottom: 0;
+}
+
+.flame {
+    position: absolute;
+    width: 16px;
+    height: 35px;
+    background-color: #ffac33;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    top: 30px; /* Posisi api diturunkan agar lebih dekat ke kue */
+    left: 110%;
+    transform: translateX(-50%);
+    animation: flicker 1s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { transform: translateX(-50%) scaleY(1) scaleX(1); opacity: 1; }
+    50% { transform: translateX(-52%) scaleY(0.95) scaleX(1.05); opacity: 0.8; }
+    100% { transform: translateX(-48%) scaleY(1.05) scaleX(0.95); opacity: 1; }
+}
+
+#box {
+    width: 400px;
+    cursor: pointer;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.05); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.box-open {
+    width: 500px;
+}
+
+.instruction {
+    margin-top: 20px;
+    font-size: 1em;
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+/* --- Animasi Konfeti --- */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    opacity: 0.9;
+    animation: fall 5s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.button-lanjut {
+    background-color: #002D62; /* Warna biru tua */
+    color: #fdf4d6; /* Warna krem */
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 25px;
+    transition: transform 0.2s ease;
+}
+
+.button-lanjut:hover {
+    transform: scale(1.05);
+}

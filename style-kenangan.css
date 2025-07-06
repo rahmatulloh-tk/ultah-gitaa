@@ -1,0 +1,252 @@
+/* Import Font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    /* --- GRADIENT BACKGROUND --- */
+    background: linear-gradient(to bottom, rgba(255, 180, 194, 0.5), #fff2fa);
+    background-attachment: fixed;
+}
+
+.page-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Setiap section minimal setinggi layar */
+    padding: 50px;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+/* --- ANIMASI SAAT SCROLL --- */
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.scroll-animation.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Styling konten */
+.column-left, .column-right {
+    flex: 1; /* Membuat kolom sama lebar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-grid {
+    max-width: 200%;
+    border-radius: 20px;
+}
+
+.date-text {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #002D62;
+}
+
+.main-title {
+    font-size: 4em;
+    font-weight: 800;
+    color: #002D62;
+    margin: 0;
+}
+
+/* Section 2 */
+.page-section.reverse {
+    flex-direction: row-reverse; /* Tukar posisi kolom */
+}
+.name-title {
+    font-size: 2.5em;
+    font-weight: 800;
+}
+.letter-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+    max-width: 500px;
+    text-align: justify;
+}
+
+
+/* Pengaturan untuk foto pertama */
+.photo-strip {
+    max-width: 250px; 
+}
+
+.photo-strip2 {
+    max-width: 250px;
+    margin-top: 50px; 
+}
+
+.photo-strip:hover, .photo-strip2:hover {
+    transform: scale(1.03);
+}
+
+/* Penyesuaian untuk layar HP agar fotonya tidak bersebelahan tapi menumpuk */
+@media (max-width: 768px) {
+    .photostrip-container {
+        flex-direction: column; /* Ubah arah jadi vertikal */
+        align-items: center; /* Posisikan di tengah */
+        gap: 30px;
+    }
+    /* Hapus margin atas di mode HP agar tidak terlalu jauh jaraknya */
+    .photo-strip2 {
+        margin-top: 0;
+    }
+}
+
+/* Section 3 (Footer) */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    gap: 5px;
+}
+.button-loa {
+    background-color: #8892C6;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+    align-self: flex-end;
+    margin-right: 15%;
+
+}
+.button-loa:hover {
+    transform: scale(1.05);
+}
+
+.developer {
+    width: 100%; 
+    align-self: flex-start;
+    text-align: left;
+    margin-top: 100px;
+    padding-left: 15%; 
+}
+
+.developer p {
+    margin-bottom: 10px;
+}
+
+.dev-container {
+    display: flex;
+    gap: 10px;
+}
+
+.develop, .develop2 {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal-box {
+    background-color: #fff2fa;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay:not(.hidden) .modal-box {
+    transform: scale(1);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+.modal-box h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #002D62;
+}
+
+.main-letter {
+    font-size: 1.1em;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.modal-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+@media (max-width: 768px) {
+    .page-section, .page-section.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+    .letter-text {
+        text-align: center;
+    }
+    .main-title {
+        font-size: 3em;
+    }
+    .photostrip-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .photo-strip2 {
+        margin-top: 0;
+    }
+    .photo-strip, .photo-strip2 {
+        max-width: 60%;
+    }
+    .developer {
+        width: 100%;
+        align-self: center; 
+        text-align: center;
+        padding-left: 0;
+    }
+    .dev-container {
+        justify-content: center; 
+    }
+}

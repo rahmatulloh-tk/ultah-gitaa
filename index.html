@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Angg!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="start-screen" class="scene">
+        <h1>Hai Anggita!</h1>
+        <p>Ada kejutan kecil untukmu...</p>
+        <button id="start-button">Klik untuk Mulai</button>
+    </div>
+
+    <div id="confetti-container"></div>
+
+    <div id="scene1" class="scene">
+        <h1>Selamat Ulang Tahun Angg!</h1>
+        <p>Tiup Lilinnya dan berdoa semoga ... aamiin</p>
+        <div id="countdown">10</div>
+        <div class="cake-container">
+            <img src="https://i.imgur.com/nSWXeIP.png" alt="Kue Ulang Tahun" class="cake">
+            <div id="flame" class="flame"></div>
+        </div>
+    </div>
+
+    <div id="scene2" class="scene hidden">
+        <h1>Selamat Ulang Tahun Angg</h1>
+        <img id="box" src="https://i.imgur.com/u8dFHd3.png" alt="Kotak Kado" class="box">
+        <p class="instruction">Psst... coba klik kadonya!</p>
+    </div>
+
+    <div id="scene3" class="scene hidden">
+        <h1>Selamat Ulang Tahun Angg</h1>
+        <img src="https://i.imgur.com/xszyU1y.png" alt="Kado Terbuka" class="box-open">
+         <a href="kenangan.html" class="button-lanjut">Birthday Latter</a>
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="https://raw.githubusercontent.com/rahmatulloh-tk/ultah-gitaa/main/birthday.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
